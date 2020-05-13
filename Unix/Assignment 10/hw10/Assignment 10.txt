@@ -1,0 +1,10 @@
+sed -n '/chevy/p' test
+sed -n '3,6p' test
+sed -n '/^chevy/,/^bmw/p;/^bmw/q' test
+sed 's/chevy/chervolet/g' test
+sed 'a\--------------------\' test
+sed '/ford/d' test
+sed 's/$/.00/' test
+awk '{print $NF " " $1}' test
+awk '/ford/ {count++} END{print count}' test
+awk 'BEGIN {print "Make\t|Model\t|Year\t|K Miles\t|Price"} {$NF="$"$NF".00"; print}' test
